@@ -63,6 +63,37 @@ app.get('/my_sokoban', function (req, res) {
     res.sendFile(__dirname + '/html/projects/my_sokoban.html');
 })
 
+app.get('/101pong', function (req, res) {
+    res.sendFile(__dirname + '/html/projects/maths/101pong.html');
+})
+app.get('/102architect', function (req, res) {
+    res.sendFile(__dirname + '/html/projects/maths/102architect.html');
+})
+app.get('/103cipher', function (req, res) {
+    res.sendFile(__dirname + '/html/projects/maths/103cipher.html');
+})
+app.get('/104intersection', function (req, res) {
+    res.sendFile(__dirname + '/html/projects/maths/104intersection.html');
+})
+app.get('/105torus', function (req, res) {
+    res.sendFile(__dirname + '/html/projects/maths/105torus.html');
+})
+app.get('/106bombyx', function (req, res) {
+    res.sendFile(__dirname + '/html/projects/maths/106bombyx.html');
+})
+app.get('/107transfer', function (req, res) {
+    res.sendFile(__dirname + '/html/projects/maths/107transfer.html');
+})
+app.get('/108trigo', function (req, res) {
+    res.sendFile(__dirname + '/html/projects/maths/108trigo.html');
+})
+app.get('/109titration', function (req, res) {
+    res.sendFile(__dirname + '/html/projects/maths/109titration.html');
+})
+app.get('/110borwein', function (req, res) {
+    res.sendFile(__dirname + '/html/projects/maths/110borwein.html');
+})
+
 app.listen(port, function () {
   console.log('Listening on port %s !', port)
 })
