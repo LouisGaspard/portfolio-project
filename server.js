@@ -7,8 +7,8 @@ var port = process.env.PORT || 8080;
 var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: 'process.env.MAIL',
-      pass: 'process.env.PASS'
+      user: process.env.MAIL,
+      pass: process.env.PASS
     }
 });
 
