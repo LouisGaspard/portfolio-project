@@ -47,6 +47,9 @@ app.post('/send_contact', function (req, res) {
 app.get('/html/header.html', function (req, res) {
     res.sendFile(__dirname + '/html/header.html');
 })
+app.get('/html/style.css', function (req, res) {
+    res.sendFile(__dirname + '/html/style.css');
+})
 app.get('/about', function (req, res) {
     res.sendFile(__dirname + '/html/about.html');
 })
