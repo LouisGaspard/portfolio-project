@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var nodemailer = require('nodemailer');
+var port = process.env.PORT || 8080;
 
 var transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -59,6 +60,6 @@ app.get('/my_sokoban', function (req, res) {
     res.sendFile(__dirname + '/html/projects/my_sokoban.html');
 })
 
-app.listen(8080, function () {
-  console.log('Listening on port 8080 !')
+app.listen(port, function () {
+  console.log('Listening on port %s !', port)
 })
