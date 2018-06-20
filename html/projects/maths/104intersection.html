@@ -22,20 +22,42 @@
             <a style="font-size: 25px; margin-left: 10px" target="_blank" href="https://github.com/LouisGaspard/104intersection">
                 <i class="fa fa-md fa-github" aria-hidden="true"></i>
             </a></h3>
-            <p style="text-align: center">Le but du projet "104intersection" est de.</p>
+            <p style="text-align: center">Le but du projet "104intersection" est de calcul d'intersection avec trois types d'objets dans l'espace : Cone, Sphère, Cylindre.</p>
             <div class="shell-wrap">
                 <p class="shell-top-bar">/louis/projets/104intersection/</p>
                 <ul class="shell-body">
-                    <li>./104intersection</li>
-                    <p>my_ls lib src include Makefile</p>
+                    <li>./104intersection 1 0 0 2 1 1 0 1</li>
+                    <p1>sphere of radius 1</p1><br/>
+                    <p1>straight line going through the (0,0,2) point and of direction vector (1,1,0)</p1><br/>
+                    <p1>No intersection point.</p1><br/>
                     <br/>
-                    <li>./104intersection src</li>
-                    <p>my_ls.c main.c utils.c</p>
+                    <li>./104intersection 1 4 0 3 0 0 -2 4</li>
+                    <p1>sphere of radius 4</p1><br/>
+                    <p1>straight line going through the (4,0,3) point and of direction vector (0,0,-2)</p1><br/>
+                    <p1>1 intersection point :</p1><br/>
+                    <p1>(4.000, 0.000, 0.000)</p1><br/>
                     <br/>
-                    <li>./104intersection /tmp</li>
-                    <p>testfile.txt sample.tar</p>
+                    <li>./104intersection 2 0 0 2 1 1 0 1</li>
+                    <p1>cylinder of radius 1</p1><br/>
+                    <p1>straight line going through the (0,0,2) point and of direction vector (1,1,0)</p1><br/>
+                    <p1>2 intersection points :</p1><br/>
+                    <p1>(0.707, 0.707, 2.000)</p1><br/>
+                    <p1>(-0.707, -0.707, 2.000)</p1><br/>
+                    <br/>
+                    <li>./104intersection 3 -1 -1 -1 1 1 5 30</li>
+                    <p1>cone of 30 degree angle</p1><br/>
+                    <p1>straight line going through the (-1,-1,-1) point and of direction vector (1,1,5)</p1><br/>
+                    <p1>2 intersection points :</p1><br/>
+                    <p1>(-1.568, -1.568, -3.842)</p1><br/>
+                    <p1>(-0.537, -0.537, 1.315)</p1><br/>
+                    <br/>
+                    <li>./104intersection 2 1 0 0 0 0 1 1</li>
+                    <p1>cylinder of radius 1</p1><br/>
+                    <p1>straight line going through the (1,0,0) point and of direction vector (0,0,1)</p1><br/>
+                    <p1>There is an infinite number of intersection points.</p1><br/>
                 </ul>
             </div>
         </div>
+        <br/>
     </body>
 </html>
