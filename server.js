@@ -4,6 +4,23 @@ var bodyParser = require('body-parser');
 var nodemailer = require('nodemailer');
 var port = process.env.PORT || 8080;
 
+const { Client } = require('pg');
+
+const client = new Client({
+    connectionString: 'postgres://ihblanrwpgvlwq:476fc0004722f2711b25c5cfa585d9c1e6c10a4f6c55ad1896d10754ca9b8fb7@ec2-54-217-217-194.eu-west-1.compute.amazonaws.com:5432/d87ab73hqpb2pl',
+    ssl: true,
+});
+
+client.connect();
+
+client.query('CREATE DATABASE users;', (err, res) => {
+    if (err) throw err;
+    for (let row of res.rows) {
+        console.log(JSON.stringify(row));
+    }
+    client.end();
+});
+
 var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
