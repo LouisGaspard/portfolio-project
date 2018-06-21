@@ -53,6 +53,8 @@ app.get('/html/style.css', function (req, res) {
 app.get('/about', function (req, res) {
     res.sendFile(__dirname + '/html/about.html');
 })
+
+//PROJECTS
 app.get('/my_printf', function (req, res) {
     res.sendFile(__dirname + '/html/projects/my_printf.html');
 })
@@ -62,7 +64,17 @@ app.get('/my_ls', function (req, res) {
 app.get('/my_sokoban', function (req, res) {
     res.sendFile(__dirname + '/html/projects/my_sokoban.html');
 })
+app.get('/minishell1', function (req, res) {
+    res.sendFile(__dirname + '/html/projects/minishell1.html');
+})
+app.get('/minishell2', function (req, res) {
+    res.sendFile(__dirname + '/html/projects/minishell2.html');
+})
+app.get('/42sh', function (req, res) {
+    res.sendFile(__dirname + '/html/projects/42sh.html');
+})
 
+//MATHS PROJECTS
 app.get('/101pong', function (req, res) {
     res.sendFile(__dirname + '/html/projects/maths/101pong.html');
 })
@@ -94,6 +106,7 @@ app.get('/110borwein', function (req, res) {
     res.sendFile(__dirname + '/html/projects/maths/110borwein.html');
 })
 
+//SERVER LAUNCH
 app.listen(port, function () {
   console.log('Listening on port %s !', port)
 })
