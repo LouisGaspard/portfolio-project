@@ -1,20 +1,7 @@
 var express = require('express');
 var app = express();
-var bodyParser = require('body-parser');
-var nodemailer = require('nodemailer');
 
-var transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-      user: 'MAIL',
-      pass: 'PASS'
-    }
-});
-
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
-  extended: true
-}));
+var port = process.env.PORT || 8080;
 
 //home
 app.get('/', function (req, res) {
@@ -110,6 +97,6 @@ app.get('/portfolio4', function (req, res) {
 })
 
 //server
-app.listen(8080, function () {
+app.listen(port, function () {
   console.log('Listening on port 8080 !')
 })
