@@ -2,13 +2,12 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var nodemailer = require('nodemailer');
-var port = process.env.PORT || 8080;
 
 var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: process.env.MAIL,
-      pass: process.env.PASS
+      user: 'MAIL',
+      pass: 'PASS'
     }
 });
 
@@ -17,96 +16,100 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
+//home
 app.get('/', function (req, res) {
   res.sendFile(__dirname + '/html/index.html');
 })
-app.get('/contact', function (req, res) {
-    res.sendFile(__dirname + '/html/contact.html');
+
+//projets
+app.get('/maths', function (req, res) {
+    res.sendFile(__dirname + '/html/projets/maths.html');
 })
-app.post('/send_contact', function (req, res) {
-    var lname = req.body.lname,
-        fname = req.body.fname,
-        mail = req.body.mail,
-        object = req.body.object,
-        message = req.body.message;
-    var mailOptions = {
-        from: mail,
-        to: 'louis.gaspard55@gmail.com',
-        subject: fname + lname + object,
-        text: message
-    };
-    transporter.sendMail(mailOptions, function(error, info){
-        if (error) {
-          console.log(error);
-        } else {
-          console.log('Email sent: ' + info.response);
-        }
-    });
-    res.redirect('/contact');
+app.get('/psu', function (req, res) {
+    res.sendFile(__dirname + '/html/projets/psu.html');
 })
-app.get('/html/header.html', function (req, res) {
-    res.sendFile(__dirname + '/html/header.html');
+app.get('/shell', function (req, res) {
+    res.sendFile(__dirname + '/html/projets/shell.html');
 })
-app.get('/html/style.css', function (req, res) {
-    res.sendFile(__dirname + '/html/style.css');
+app.get('/cpe', function (req, res) {
+    res.sendFile(__dirname + '/html/projets/cpe.html');
 })
-app.get('/about', function (req, res) {
-    res.sendFile(__dirname + '/html/about.html');
+app.get('/timeline', function (req, res) {
+    res.sendFile(__dirname + '/html/projets/timeline.html');
 })
 
-//PROJECTS
-app.get('/my_printf', function (req, res) {
-    res.sendFile(__dirname + '/html/projects/my_printf.html');
+//css
+app.get('/creative.min.css', function (req, res) {
+    res.sendFile(__dirname + '/html/css/creative.min.css');
 })
-app.get('/my_ls', function (req, res) {
-    res.sendFile(__dirname + '/html/projects/my_ls.html');
+app.get('/timeline.css', function (req, res) {
+    res.sendFile(__dirname + '/html/css/timeline.css');
 })
-app.get('/my_sokoban', function (req, res) {
-    res.sendFile(__dirname + '/html/projects/my_sokoban.html');
+app.get('/timeline-style.css', function (req, res) {
+    res.sendFile(__dirname + '/html/css/timeline-style.css');
 })
-app.get('/minishell1', function (req, res) {
-    res.sendFile(__dirname + '/html/projects/minishell1.html');
-})
-app.get('/minishell2', function (req, res) {
-    res.sendFile(__dirname + '/html/projects/minishell2.html');
-})
-app.get('/42sh', function (req, res) {
-    res.sendFile(__dirname + '/html/projects/42sh.html');
+//script
+app.get('/timeline-2017-2018.js', function (req, res) {
+    res.sendFile(__dirname + '/html/js/timeline-2017-2018.js');
 })
 
-//MATHS PROJECTS
-app.get('/101pong', function (req, res) {
-    res.sendFile(__dirname + '/html/projects/maths/101pong.html');
+//vendor
+app.get('/bootstrap.min.css', function (req, res) {
+    res.sendFile(__dirname + '/html/vendor/bootstrap/css/bootstrap.min.css');
 })
-app.get('/102architect', function (req, res) {
-    res.sendFile(__dirname + '/html/projects/maths/102architect.html');
+app.get('/font-awesome.min.css', function (req, res) {
+    res.sendFile(__dirname + '/html/vendor/font-awesome/css/fontawesome.css');
 })
-app.get('/103cipher', function (req, res) {
-    res.sendFile(__dirname + '/html/projects/maths/103cipher.html');
+app.get('/magnific-popup.css', function (req, res) {
+    res.sendFile(__dirname + '/html/vendor/magnific-popup/magnific-popup.css');
 })
-app.get('/104intersection', function (req, res) {
-    res.sendFile(__dirname + '/html/projects/maths/104intersection.html');
+app.get('/jquery.min.js', function (req, res) {
+    res.sendFile(__dirname + '/html/vendor/jquery/jquery.min.js');
 })
-app.get('/105torus', function (req, res) {
-    res.sendFile(__dirname + '/html/projects/maths/105torus.html');
+app.get('/bootstrap.bundle.min.js', function (req, res) {
+    res.sendFile(__dirname + '/html/vendor/bootstrap/js/bootstrap.bundle.min.js');
 })
-app.get('/106bombyx', function (req, res) {
-    res.sendFile(__dirname + '/html/projects/maths/106bombyx.html');
+app.get('/jquery.easing.min.js', function (req, res) {
+    res.sendFile(__dirname + '/html/vendor/jquery-easing/jquery.easing.min.js');
 })
-app.get('/107transfer', function (req, res) {
-    res.sendFile(__dirname + '/html/projects/maths/107transfer.html');
+app.get('/scrollreveal.min.js', function (req, res) {
+    res.sendFile(__dirname + '/html/vendor/scrollreveal/scrollreveal.min.js');
 })
-app.get('/108trigo', function (req, res) {
-    res.sendFile(__dirname + '/html/projects/maths/108trigo.html');
-})
-app.get('/109titration', function (req, res) {
-    res.sendFile(__dirname + '/html/projects/maths/109titration.html');
-})
-app.get('/110borwein', function (req, res) {
-    res.sendFile(__dirname + '/html/projects/maths/110borwein.html');
+app.get('/jquery.magnific-popup.min.js', function (req, res) {
+    res.sendFile(__dirname + '/html/vendor/magnific-popup/jquery.magnific-popup.min.js');
 })
 
-//SERVER LAUNCH
-app.listen(port, function () {
-  console.log('Listening on port %s !', port)
+//js
+app.get('/creative.min.js', function (req, res) {
+    res.sendFile(__dirname + '/html/js/creative.min.js');
+})
+
+//font
+app.get('/font1', function (req, res) {
+    res.sendFile(__dirname + '/html/css/font1.css');
+})
+app.get('/font2', function (req, res) {
+    res.sendFile(__dirname + '/html/css/font2.css');
+})
+
+//img
+app.get('/header-img', function (req, res) {
+    res.sendFile(__dirname + '/html/img/header.jpg');
+})
+app.get('/portfolio1', function (req, res) {
+    res.sendFile(__dirname + '/html/img/portfolio/thumbnails/1.jpg');
+})
+app.get('/portfolio2', function (req, res) {
+    res.sendFile(__dirname + '/html/img/portfolio/thumbnails/2.jpg');
+})
+app.get('/portfolio3', function (req, res) {
+    res.sendFile(__dirname + '/html/img/portfolio/thumbnails/3.jpg');
+})
+app.get('/portfolio4', function (req, res) {
+    res.sendFile(__dirname + '/html/img/portfolio/thumbnails/4.jpg');
+})
+
+//server
+app.listen(8080, function () {
+  console.log('Listening on port 8080 !')
 })
