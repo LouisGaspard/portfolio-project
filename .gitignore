@@ -59,3 +59,4 @@ typings/
 
 # next.js build output
 .next
+html/vendor/font-awesome/svgs/brands/google-plus.svg
