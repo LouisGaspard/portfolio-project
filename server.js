@@ -49,30 +49,30 @@ app.get('/timeline-2017-2018.js', function (req, res) {
     res.sendFile(__dirname + '/files/js/timeline-2017-2018.js');
 })
 
-//vendor
+//framework
 app.get('/bootstrap.min.css', function (req, res) {
-    res.sendFile(__dirname + '/files/vendor/bootstrap/css/bootstrap.min.css');
+    res.sendFile(__dirname + '/files/framework/bootstrap/css/bootstrap.min.css');
 })
 app.get('/font-awesome.min.css', function (req, res) {
-    res.sendFile(__dirname + '/files/vendor/font-awesome/css/fontawesome.css');
+    res.sendFile(__dirname + '/files/framework/font-awesome/css/fontawesome.css');
 })
 app.get('/magnific-popup.css', function (req, res) {
-    res.sendFile(__dirname + '/files/vendor/magnific-popup/magnific-popup.css');
+    res.sendFile(__dirname + '/files/framework/magnific-popup/magnific-popup.css');
 })
 app.get('/jquery.min.js', function (req, res) {
-    res.sendFile(__dirname + '/files/vendor/jquery/jquery.min.js');
+    res.sendFile(__dirname + '/files/framework/jquery/jquery.min.js');
 })
 app.get('/bootstrap.bundle.min.js', function (req, res) {
-    res.sendFile(__dirname + '/files/vendor/bootstrap/js/bootstrap.bundle.min.js');
+    res.sendFile(__dirname + '/files/framework/bootstrap/js/bootstrap.bundle.min.js');
 })
 app.get('/jquery.easing.min.js', function (req, res) {
-    res.sendFile(__dirname + '/files/vendor/jquery-easing/jquery.easing.min.js');
+    res.sendFile(__dirname + '/files/framework/jquery-easing/jquery.easing.min.js');
 })
 app.get('/scrollreveal.min.js', function (req, res) {
-    res.sendFile(__dirname + '/files/vendor/scrollreveal/scrollreveal.min.js');
+    res.sendFile(__dirname + '/files/framework/scrollreveal/scrollreveal.min.js');
 })
 app.get('/jquery.magnific-popup.min.js', function (req, res) {
-    res.sendFile(__dirname + '/files/vendor/magnific-popup/jquery.magnific-popup.min.js');
+    res.sendFile(__dirname + '/files/framework/magnific-popup/jquery.magnific-popup.min.js');
 })
 
 //js
